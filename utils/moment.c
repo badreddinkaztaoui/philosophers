@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_timestamp.c                                    :+:      :+:    :+:   */
+/*   moment.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkaztaou <bkaztaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 05:00:13 by bkaztaou          #+#    #+#             */
-/*   Updated: 2023/09/12 05:05:46 by bkaztaou         ###   ########.fr       */
+/*   Created: 2023/09/16 00:45:59 by bkaztaou          #+#    #+#             */
+/*   Updated: 2023/09/16 01:19:22 by bkaztaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-int	get_timestamp(struct timeval start_time)
+long	now(void)
 {
-	struct timeval	curr_time;
-	int				sec;
-	int				usec;
+	struct timeval	time;
+	long			miliseconds;
 
-	gettimeofday(&curr_time, NULL);
-	sec = (curr_time.tv_sec - start_time.tv_sec) * 1000;
-	usec = (curr_time.tv_usec - start_time.tv_usec) / 1000;
-	return (sec + usec);
+	gettimeofday(&time, NULL);
+	miliseconds = (time.tv_sec * 1000) + (time.tv_usec / 1000);
+	return (miliseconds);
 }
