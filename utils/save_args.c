@@ -6,7 +6,7 @@
 /*   By: bkaztaou <bkaztaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 04:53:19 by bkaztaou          #+#    #+#             */
-/*   Updated: 2023/09/18 00:52:45 by bkaztaou         ###   ########.fr       */
+/*   Updated: 2023/09/19 03:24:21 by bkaztaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ void	save_args(t_args *args, int ac, char **av)
 	args->die_time = ft_atoi(av[2]);
 	args->eat_time = ft_atoi(av[3]);
 	args->sleep_time = ft_atoi(av[4]);
-	args->forks = malloc(sizeof(pthread_mutex_t) * args->philos_count);
 }

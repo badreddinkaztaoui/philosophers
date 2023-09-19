@@ -6,7 +6,7 @@
 /*   By: bkaztaou <bkaztaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 04:17:14 by bkaztaou          #+#    #+#             */
-/*   Updated: 2023/09/18 01:10:51 by bkaztaou         ###   ########.fr       */
+/*   Updated: 2023/09/19 04:12:02 by bkaztaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ void	ft_cleanup(t_philo *philos, t_args *args)
 
 	i = -1;
 	while (++i < args->philos_count)
-		pthread_mutex_destroy(&args->forks[i]);
-	pthread_mutex_destroy(&args->meal_mutex);
+	{
+		pthread_mutex_destroy(&philos->forks[i]);
+	}
+	free(philos->forks);
 	free(philos);
-	free(args->forks);
 }
