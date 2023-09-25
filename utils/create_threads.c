@@ -6,7 +6,7 @@
 /*   By: bkaztaou <bkaztaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 04:54:13 by bkaztaou          #+#    #+#             */
-/*   Updated: 2023/09/19 04:33:38 by bkaztaou         ###   ########.fr       */
+/*   Updated: 2023/09/19 04:54:46 by bkaztaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	init_philo(t_philo *philos, t_args *args, pthread_mutex_t *forks)
 
 	i = -1;
 	print = malloc(sizeof(pthread_mutex_t));
-	if (pthread_mutex_init(&philos->eat_mutex, NULL)
-		|| pthread_mutex_init(print, NULL))
+	if (pthread_mutex_init(print, NULL)
+		|| pthread_mutex_init(&philos->eat_mutex, NULL))
 		return (1);
 	while (++i < args->philos_count)
 	{
@@ -49,6 +49,7 @@ int	create_threads(t_philo *philos, t_args *args, pthread_mutex_t *forks)
 	{
 		if (pthread_create(&philos[i].thread, NULL, &simulation, &philos[i]))
 			return (ft_error("Creation of threads failed"));
+		usleep(100);
 	}
 	check_end_simulation(philos);
 	return (0);

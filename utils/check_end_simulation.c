@@ -6,7 +6,7 @@
 /*   By: bkaztaou <bkaztaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 00:42:28 by bkaztaou          #+#    #+#             */
-/*   Updated: 2023/09/19 04:35:47 by bkaztaou         ###   ########.fr       */
+/*   Updated: 2023/09/20 04:25:52 by bkaztaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	death(t_philo *philo)
 	{
 		pthread_mutex_lock(philo->print);
 		printf("%lu %d is died\n", now() - philo->start_eat_time, philo->id);
-		return (1);
+		return (-1);
 	}
 	return (0);
 }
@@ -61,11 +61,11 @@ void	check_end_simulation(t_philo *philos)
 			if (all_philos_eat(cache, philos->args->philos_count))
 				return ;
 		}
-		if (death(&philos[i]))
+		if (death(&philos[i]) == -1)
 			return ;
+		pthread_mutex_unlock(&philos[i].eat_mutex);
 		i++;
 		if (i == philos->args->philos_count)
 			i = 0;
-		pthread_mutex_unlock(&philos[i].eat_mutex);
 	}
 }

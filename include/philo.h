@@ -6,7 +6,7 @@
 /*   By: bkaztaou <bkaztaou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 01:09:04 by bkaztaou          #+#    #+#             */
-/*   Updated: 2023/09/19 04:33:55 by bkaztaou         ###   ########.fr       */
+/*   Updated: 2023/09/20 04:34:10 by bkaztaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int		check_args(int ac, char **av);
 void	save_args(t_args *args, int ac, char **av);
 void	ft_state(t_philo *philo, char action);
 void	check_end_simulation(t_philo *philos);
-void	ft_cleanup(t_philo *philos, t_args *args);
 long	now(void);
 
 #endif

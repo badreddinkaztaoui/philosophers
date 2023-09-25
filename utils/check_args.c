@@ -20,10 +20,13 @@ int	check_args(int ac, char **av)
 	if (ac < 5 || ac > 6)
 		return (ft_error("Incorrect number of arguments. Expected [5] or [6]"));
 	while (++i < ac)
-		ft_atoi(av[i]);
+	{
+		if (ft_atoi(av[i]) == -1)
+			return (-1);
+		else if (ft_atoi(av[i]) == 0)
+			return (ft_error("Argument should not be [0]."));
+	}
 	if (ft_atoi(av[1]) > 200)
 		return (ft_error("Maximum number of philosophers is [200]"));
-	if (ac == 6 && ft_atoi(av[5]) <= 0)
-		return (ft_error("Philosophers meals count can't be [0] or less."));
 	return (0);
 }

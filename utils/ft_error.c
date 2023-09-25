@@ -15,5 +15,5 @@
 int	ft_error(char *message)
 {
 	printf("\x1b[31mError: %s\x1b[0m\n", message);
-	return (1);
+	return (-1);
 }

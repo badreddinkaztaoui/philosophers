@@ -42,15 +42,15 @@ int	ft_atoi(char *str)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			ft_error("Number should be positive");
+			return (ft_error("Number should be positive"), -1);
 		i++;
 	}
 	if (str[i] == '-' || str[i] == '+')
-		ft_error("Number should be valid");
+		return (ft_error("Number should be valid"), -1);
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
-			ft_error("Number should be valid");
+			return (ft_error("Number should be valid"), -1);
 		ft_isinrange(result, str[i]);
 		result = result * 10 + str[i++] - '0';
 	}
