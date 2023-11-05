@@ -60,14 +60,17 @@ Have more overhead for communication between them.
 A data race occurs in concurrent programming when two or more threads or processes access a shared resource (like a variable) simultaneously, and at least one of them is writing to it. This can lead to unpredictable behavior and bugs. In this project, the use of mutexes helps prevent data races by ensuring exclusive access to shared resources like forks.
 
 ## Usage
-To run the program, use the following command:
-
-### Compile the code
+### Compile the program
 ```bash
 make
 ```
+### Run the program
 ```bash
-./philosophers number_of_philosophers time_to_die time_to_eat time_to_sleep [number_of_times_each_philosopher_must_eat]
+./philo number_of_philosophers time_to_die time_to_eat time_to_sleep [number_of_times_each_philosopher_must_eat]
 ```
+
+## Acknowledgements
+The Dining Philosophers Problem was originally formulated by Edsger Dijkstra. Special thanks to 42 and the contributors to this project.
+
 ## License
 This project is licensed under the MIT License.
