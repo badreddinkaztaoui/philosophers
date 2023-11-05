@@ -1,3 +1,5 @@
+![Dining Philosophers](https://example.com/dining_philosophers.png)
+
 # Dining Philosophers Problem
 
 The Dining Philosophers Problem is a famous problem in computer science used to illustrate common issues in concurrent programming. This project is coded in C, following the 42 Norm. It simulates a scenario where a number of philosophers are sitting at a round table doing one of three things: eating, thinking, or sleeping.
