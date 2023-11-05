@@ -36,9 +36,38 @@ Each program should have the following options:
   - `simulation.c`: Code for simulating the dining philosophers scenario.
 - `Makefile`: Build automation file.
 
-## Usage
+## Concepts Explained
 
+### Mutex
+A Mutex (short for mutual exclusion) is a synchronization primitive used in concurrent programming to prevent multiple threads from concurrently accessing shared resources (e.g., variables or data structures) that might lead to race conditions. In this project, mutexes are used to ensure that only one philosopher can access a fork at a time, preventing conflicts.
+
+### Threads
+A thread is a unit of execution within a process. Unlike processes, which have their own memory space, threads share the same memory space and resources of their parent process. This makes threads more lightweight than processes and allows them to communicate more efficiently. In this project, multiple threads are used to simulate the philosophers.
+
+### Difference between Threads and Processes
+#### Threads:
+Share the same memory space.
+Are more lightweight than processes.
+Are faster to create and manage.
+Have less overhead for communication between them.
+
+#### Processes:
+Have their own memory space.
+Are heavier and more resource-intensive.
+Have more overhead for communication between them.
+
+### Data Race
+A data race occurs in concurrent programming when two or more threads or processes access a shared resource (like a variable) simultaneously, and at least one of them is writing to it. This can lead to unpredictable behavior and bugs. In this project, the use of mutexes helps prevent data races by ensuring exclusive access to shared resources like forks.
+
+## Usage
 To run the program, use the following command:
 
+### Compile the code
+```bash
+make
+```
 ```bash
 ./philosophers number_of_philosophers time_to_die time_to_eat time_to_sleep [number_of_times_each_philosopher_must_eat]
+```
+## License
+This project is licensed under the MIT License.
