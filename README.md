@@ -1,4 +1,4 @@
-![Dining Philosophers](https://example.com/dining_philosophers.png)
+![Dining Philosophers](https://files.codingninjas.in/article_images/dining-philosopher-problem-using-semaphores-1-1643507259.webp)
 
 # Dining Philosophers Problem
 
