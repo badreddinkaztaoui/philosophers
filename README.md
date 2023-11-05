@@ -1,4 +1,4 @@
-![Dining Philosophers](https://files.codingninjas.in/article_images/dining-philosopher-problem-using-semaphores-1-1643507259.webp)
+![Dining Philosophers](https://res.cloudinary.com/practicaldev/image/fetch/s--UJiIzrz5--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/4mrdvbtfbv2ma2avpp8i.png)
 
 # Dining Philosophers Problem
 
